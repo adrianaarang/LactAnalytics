@@ -1,0 +1,14 @@
+# Datos brutos (peso elevado)
+data/raw/
+
+# Python
+__pycache__/
+*.py[cod]
+.env
+*.egg-info/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Streamlit
+.streamlit/secrets.toml
