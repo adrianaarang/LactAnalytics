@@ -33,6 +33,7 @@ El proyecto transforma los microdatos de la **Encuesta Nacional de Salud de Espa
 ## 🖥️ Demo
 
 [![Streamlit App](https://img.shields.io/badge/▶%20Ver%20demo%20en%20vivo-lactanalytics.streamlit.app-FF4B4B?logo=streamlit&logoColor=white&style=for-the-badge)](https://lactanalytics.streamlit.app)
+[![DeepWiki](https://img.shields.io/badge/📖%20Documentación-DeepWiki-blue?style=for-the-badge)](https://deepwiki.com/adrianaarang/LactAnalytics)
 
 ![Screenshot del dashboard](docs/screenshot.png)
 
