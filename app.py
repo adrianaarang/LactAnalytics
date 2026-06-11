@@ -308,7 +308,7 @@ def render_kpis(kpis: dict):
          "OMS mínimo: 6 meses", "alerta"),
         (c5, kpis["total_menores"], "",
          "Menores en la muestra",
-         "ENSE 2017 · menores 0-4 años",
+         "ENSE 2017 · menores 0-2 años",
          "Representativa a nivel nacional", "normal"),
     ]
 
