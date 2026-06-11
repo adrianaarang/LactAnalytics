@@ -354,13 +354,14 @@ def main():
     st.markdown("<br>", unsafe_allow_html=True)
 
     # Navegación por secciones mediante tabs
-    tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs([
+    tab1, tab2, tab3, tab4, tab5, tab6, tab7 = st.tabs([
         "📊 Resumen ejecutivo",
         "🎓 Factores condicionantes",
         "👶 Salud infantil",
         "🗺️ Mapa por CCAA",
         "⚠️ Sesgos y gobernanza",
         "🏥 Recursos sanitarios",
+        "🤱 Asistente LactBot",
     ])
 
     with tab1:
@@ -386,6 +387,10 @@ def main():
     with tab6:
         from secciones import recursos_sanitarios
         recursos_sanitarios.render()
+        
+    with tab7:
+        from secciones import asistente_lactancia
+        asistente_lactancia.render()
 
     render_footer()
 
