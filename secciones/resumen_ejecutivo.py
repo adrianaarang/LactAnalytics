@@ -369,7 +369,7 @@ def render(df: pd.DataFrame, kpis: dict):
     with col_grafico:
         _titulo_seccion(
             "¿Cuánto dura la lactancia?",
-            "Curva de abandono mes a mes · menores 0-4 años"
+            "Curva de abandono mes a mes · menores 0-2 años"
         )
         st.plotly_chart(
             _chart_curva_abandono(df),
