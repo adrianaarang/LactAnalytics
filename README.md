@@ -224,8 +224,8 @@ Los ficheros de datos brutos (`data/raw/`) están excluidos del repositorio por 
 
 ## 👩‍💻 Autora
 
-**Adriana Arang**  
-Full Stack Developer · IT Analyst · Especialización en IA & Big Data  
+**Adriana Aránguez**  
+Full Stack Developer · IT Analyst · IA & Big Data  
 Bootcamp F5 · 2025
 
 [![GitHub](https://img.shields.io/badge/GitHub-adrianaarang-181717?logo=github)](https://github.com/adrianaarang)
