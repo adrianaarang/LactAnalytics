@@ -12,3 +12,6 @@ __pycache__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Contraseña de la API
+.env
