@@ -1,11 +1,19 @@
 # 🤱 LactAnalytics
 
-**Dashboard interactivo de análisis de lactancia materna en España**  
+<div align="center">
+
+<img width="140" alt="logo" src="https://github.com/user-attachments/assets/1eb35069-542d-40f4-a692-067d1df2a75a" />
+
+**Dashboard interactivo de análisis de lactancia materna en España**
+
 Módulo II · Análisis y Visualización de Datos · Bootcamp IA & Big Data · F5 · 2025
 
-[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://lactanalytics.streamlit.app)
+[![Streamlit App](https://img.shields.io/badge/Streamlit-App-FF4B4B?logo=streamlit&logoColor=white)](https://lactanalytics.streamlit.app)
 ![Python](https://img.shields.io/badge/Python-3.11-blue)
 ![License](https://img.shields.io/badge/Licencia-CC%20BY%204.0-green)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Adriana%20Aranguez-0077B5?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/adriana-aranguez)
+
+</div>
 
 ---
 
@@ -24,7 +32,7 @@ El proyecto transforma los microdatos de la **Encuesta Nacional de Salud de Espa
 
 ## 🖥️ Demo
 
-> 🔗 **URL pública:** [lactanalytics.streamlit.app](https://lactanalytics.streamlit.app) *(disponible tras despliegue)*
+[![Streamlit App](https://img.shields.io/badge/▶%20Ver%20demo%20en%20vivo-lactanalytics.streamlit.app-FF4B4B?logo=streamlit&logoColor=white&style=for-the-badge)](https://lactanalytics.streamlit.app)
 
 ![Screenshot del dashboard](docs/screenshot.png)
 
@@ -41,13 +49,13 @@ El proyecto transforma los microdatos de la **Encuesta Nacional de Salud de Espa
 | **Registros tras limpieza** | 1.764 menores de 0-4 años |
 | **Variables** | 27 columnas (variables de lactancia, socioeconómicas y de salud infantil) |
 | **Licencia** | Reutilización con atribución · CC BY 4.0 |
-| **Fuente secundaria** | INE · Estadística de Profesionales Sanitarios Colegiados 2017 (matronas por CCAA) |
-| **Fuente terciaria** | INE · Estadística de Nacimientos 2017 (tasa de natalidad por CCAA) |
+| **Fuente secundaria** | INE · Estadística de Profesionales Sanitarios Colegiados 2017 |
+| **Fuente terciaria** | INE · Estadística de Nacimientos 2017 |
 
-### Variables numéricas principales (≥3 requeridas)
+### Variables numéricas principales
 `meses_lactancia_total`, `meses_lactancia_excl`, `edad_menor`, `clase_social`, `nivel_educativo_cod`, `imc`, `valoracion_salud`
 
-### Variables categóricas principales (≥2 requeridas)
+### Variables categóricas principales
 `ccaa`, `nivel_educativo_grupo`, `sexo_menor`, `lactancia_materna`, `lactancia_exclusiva`
 
 ---
@@ -59,8 +67,8 @@ LactAnalytics/
 │
 ├── app.py                          # Punto de entrada — configuración y orquestación
 ├── requirements.txt                # Dependencias del proyecto
+├── .python-version                 # Python 3.11 para Streamlit Cloud
 ├── .env                            # Variables de entorno (no incluido en git)
-├── .gitignore
 ├── logo.jpg                        # Logo corporativo
 │
 ├── secciones/                      # Secciones del dashboard (una por tab)
@@ -81,10 +89,6 @@ LactAnalytics/
 │
 ├── data/
 │   ├── raw/                        # Datos originales del INE (excluidos de git)
-│   │   ├── ense2017_menor_xlsx.xlsx
-│   │   ├── ense2017_hogar_xlsx.xlsx
-│   │   ├── matronas.xlsx
-│   │   └── nacimientos.xlsx
 │   └── processed/                  # Datasets limpios (versionados)
 │       ├── lactancia_clean.csv     # Dataset principal (1.764 × 27)
 │       └── matronas_lme_ccaa.csv   # Ratio matronas/nacimientos por CCAA
@@ -96,7 +100,7 @@ LactAnalytics/
 └── docs/
     ├── decision_herramienta.md     # Justificación Streamlit vs Power BI
     ├── gobernanza_sesgos.md        # Análisis ético detallado
-    └── validacion_usuario.png      # Captura de prueba con usuario no técnico
+    └── screenshot.png              # Captura del dashboard en producción
 ```
 
 ---
@@ -110,22 +114,16 @@ LactAnalytics/
 | **Pandas** | Manipulación de datos | Estándar de facto para análisis tabular en Python |
 | **NumPy** | Cálculos estadísticos | Operaciones vectorizadas eficientes |
 | **SciPy** | Estadística avanzada | KDE, tests Kruskal-Wallis, Chi-cuadrado, correlaciones |
-| **Groq + LLaMA 3** | Asistente de lactancia IA | API gratuita, modelo de alta calidad, latencia mínima |
+| **Groq + LLaMA 3** | Asistente IA | API gratuita, modelo de alta calidad, latencia mínima |
 | **python-dotenv** | Gestión de secretos | Separación segura de credenciales del código |
 
 ### ¿Por qué Streamlit y no Power BI?
 
-Streamlit permite código modular en Python (cumpliendo el criterio C5 del proyecto), integración directa con librerías estadísticas como SciPy, despliegue gratuito en Streamlit Community Cloud con URL pública, y control total del diseño visual y la narrativa. Power BI requeriría licencia para el despliegue público y limitaría la integración del asistente de IA.
+Streamlit permite código modular en Python, integración directa con librerías estadísticas como SciPy, despliegue gratuito en Streamlit Community Cloud con URL pública, y control total del diseño visual y la narrativa. Power BI requeriría licencia para el despliegue público y limitaría la integración del asistente de IA.
 
 ---
 
 ## 🚀 Instalación y ejecución local
-
-### Requisitos previos
-- Python 3.11+
-- Git
-
-### Pasos
 
 ```bash
 # 1. Clonar el repositorio
@@ -142,10 +140,10 @@ pip install -r requirements.txt
 
 # 4. Configurar variables de entorno
 # Crear archivo .env en la raíz con:
-# GROQ_API_KEY=gsk_...
+# GROQ_API_KEY="gsk_..."
 
-# 5. Descargar los datos del INE
-# Ver sección "Dataset" — colocar ficheros en data/raw/
+# 5. Descargar los datos del INE (ver sección Dataset)
+# Colocar ficheros en data/raw/
 
 # 6. Generar los datasets procesados
 python src/data_loader.py
@@ -205,29 +203,30 @@ El asistente utiliza el modelo **LLaMA 3.3 70B** a través de la API de Groq (gr
 - No recomendar marcas comerciales ni dar diagnósticos
 - Responder siempre en español con tono empático
 
-Para activarlo, añade tu `GROQ_API_KEY` en el archivo `.env`.
+Para activarlo localmente, añade tu `GROQ_API_KEY` en el archivo `.env`.
 
 ---
 
 ## 📁 Datos no incluidos en el repositorio
 
-Los ficheros de datos brutos (`data/raw/`) están excluidos del repositorio por su tamaño. Para reproducir el análisis descarga los siguientes ficheros del INE:
+Los ficheros de datos brutos (`data/raw/`) están excluidos por su tamaño. Para reproducir el análisis descarga del INE:
 
-| Fichero | Fuente | URL |
-|---|---|---|
-| `ense2017_menor_xlsx.xlsx` | INE · ENSE 2017 · Microdatos menor | [Enlace](https://www.ine.es/dyngs/INEbase/es/operacion.htm?c=Estadistica_C&cid=1254736176783&menu=resultados&secc=1254736195295&idp=1254735573175) |
-| `ense2017_hogar_xlsx.xlsx` | INE · ENSE 2017 · Microdatos hogar | [Enlace](https://www.ine.es/dyngs/INEbase/es/operacion.htm?c=Estadistica_C&cid=1254736176783&menu=resultados&secc=1254736195295&idp=1254735573175) |
-| `matronas.xlsx` | INE · Profesionales Sanitarios Colegiados 2017 | [Enlace](https://www.ine.es/dyngs/INEbase/es/operacion.htm?c=Estadistica_C&cid=1254736176781&menu=resultados&idp=1254735573175) |
-| `nacimientos.xlsx` | INE · Indicadores de Natalidad 2017 | [Enlace](https://www.ine.es/dyngs/INEbase/es/operacion.htm?c=Estadistica_C&cid=1254736176998&menu=resultados&idp=1254735573002) |
+| Fichero | Fuente |
+|---|---|
+| `ense2017_menor_xlsx.xlsx` | [INE · ENSE 2017 · Microdatos menor](https://www.ine.es/dyngs/INEbase/es/operacion.htm?c=Estadistica_C&cid=1254736176783&menu=resultados&secc=1254736195295&idp=1254735573175) |
+| `ense2017_hogar_xlsx.xlsx` | [INE · ENSE 2017 · Microdatos hogar](https://www.ine.es/dyngs/INEbase/es/operacion.htm?c=Estadistica_C&cid=1254736176783&menu=resultados&secc=1254736195295&idp=1254735573175) |
+| `matronas.xlsx` | [INE · Profesionales Sanitarios Colegiados 2017](https://www.ine.es/dyngs/INEbase/es/operacion.htm?c=Estadistica_C&cid=1254736176781&menu=resultados&idp=1254735573175) |
+| `nacimientos.xlsx` | [INE · Indicadores de Natalidad 2017](https://www.ine.es/dyngs/INEbase/es/operacion.htm?c=Estadistica_C&cid=1254736176998&menu=resultados&idp=1254735573002) |
 
 ---
 
 ## 👩‍💻 Autora
 
-**Adriana Aránguez**  
-Full Stack Developer · IT Analyst · IA & Big Data  
+**Adriana Aranguez**  
+Full Stack Developer · IT Analyst · Especialización en IA & Big Data  
 Bootcamp F5 · 2025
 
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Adriana%20Aranguez-0077B5?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/adriana-aranguez)
 [![GitHub](https://img.shields.io/badge/GitHub-adrianaarang-181717?logo=github)](https://github.com/adrianaarang)
 
 ---
