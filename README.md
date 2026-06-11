@@ -11,7 +11,6 @@ Módulo II · Análisis y Visualización de Datos · Bootcamp IA & Big Data · F
 [![Streamlit App](https://img.shields.io/badge/Streamlit-App-FF4B4B?logo=streamlit&logoColor=white)](https://lactanalytics.streamlit.app)
 ![Python](https://img.shields.io/badge/Python-3.11-blue)
 ![License](https://img.shields.io/badge/Licencia-CC%20BY%204.0-green)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Adriana%20Aranguez-0077B5?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/adriana-aranguez)
 
 </div>
 
